@@ -1,4 +1,4 @@
-import { PRODUCT_API } from "../../api/product-api";
+import { FIREBASE_API } from "../../api/FIREBASE_API";
 import React, { useEffect, useState } from "react";
 
 import CardItem from "../card item/CardItem";
@@ -10,7 +10,7 @@ const Chips = () => {
   const fetchChipsData = async () => {
     try {
       setIsLoading(true);
-      const res = await PRODUCT_API.get("/products?category=chips");
+      const res = await FIREBASE_API.get("/products?category=chips");
       setIsLoading(false);
       setChipsData(res.data.items);
     } catch (error) {

@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { db } = require("../util/admin");
-const productObject = require("./productObject");
 
 router.get("/allProducts", async (req, res) => {
   try {
