@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+
+import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute";
 
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -28,21 +26,21 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route path="/login">
+          <PublicRoute path="/login" restricted={false}>
             {!isAuth ? <Login setIsAuth={setIsAuth} /> : <Redirect to="/" />}
-          </Route>
-          <Route path="/register">
+          </PublicRoute>
+          <PublicRoute path="/register" restricted={false}>
             {!isAuth ? (
               <Register setIsAuth={setIsAuth} />
             ) : (
               <Redirect to="/login" />
             )}
-          </Route>
+          </PublicRoute>
 
-          <Route path="/chips" component={Chips} />
-          <Route path="/detergent" component={Detergent} />
-          <Route path="/frozenFoods" component={FrozenFoods} />
+          <PrivateRoute exact path="/" component={Landing} />
+          <PrivateRoute path="/chips" component={Chips} />
+          <PrivateRoute path="/detergent" component={Detergent} />
+          <PrivateRoute path="/frozenFoods" component={FrozenFoods} />
         </Switch>
       </Router>
     </div>

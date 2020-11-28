@@ -5,6 +5,7 @@ const firebase = require("firebase");
 firebase.initializeApp(config);
 
 const { check, validationResult } = require("express-validator");
+const { auth } = require("firebase-admin");
 
 // Register
 router.post(
@@ -98,5 +99,10 @@ router.post(
     }
   }
 );
+
+router.post("/signInWithGoogle", () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider);
+});
 
 module.exports = router;

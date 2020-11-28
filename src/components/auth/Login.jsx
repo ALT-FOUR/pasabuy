@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FIREBASE_API } from "../../api/FIREBASE_API";
 
 const Login = ({ setIsAuth }) => {
+  const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,12 +21,17 @@ const Login = ({ setIsAuth }) => {
         setIsAuth(false);
       }
     } catch (error) {
-      console.error({ error: error.massage });
+      setErrors(error.response.data.errors);
     }
   };
 
   return (
     <div>
+      <div className="errors-container">
+        {errors.map((e) => {
+          return e.msg;
+        })}
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
