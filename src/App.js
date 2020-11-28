@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Chips from "./components/items/Chips";
+import Detergent from "./components/items/Detergent";
+import FrozenFoods from "./components/items/FrozenFoods";
+import Landing from "./components/Landing";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/chips" component={Chips} />
+          <Route path="/detergent" component={Detergent} />
+          <Route path="/frozenFoods" component={FrozenFoods} />
+        </Switch>
+      </Router>
     </div>
   );
 }

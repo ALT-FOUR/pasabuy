@@ -1,0 +1,11 @@
+.card-item {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: 30px;
+  border: 1px solid black;
+}
+
+.item-photo {
+  height: 100px;
+}
