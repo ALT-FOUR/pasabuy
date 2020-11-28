@@ -33,43 +33,43 @@ router.post("/addProducts", async (req, res) => {
     items: [
       {
         id: 1,
-        name: "Lay's Potato Chips Cheddar & Sour Cream",
-        price: "149.50",
+        name: "Vitamilk Soya Drink Choco Shake 300ml",
+        price: "27.50",
         itemPhoto:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ47J1ZmwkNy4yGgOQ4AHUNm5itREh0ZI3nig&usqp=CAU",
+          "https://i1.wp.com/gmart.com.ph/wp-content/uploads/2020/05/VITAMILK-DOUBLE-CHOCO-300ML.jpg",
       },
       {
         id: 2,
-        name: "Potato Chips Classics Classic Barbeque",
-        price: "29.50",
+        name: "Mogu Mogu Juice Lychee 1L",
+        price: "104.50",
         itemPhoto:
-          "https://i5.walmartimages.com/asr/8a71fcba-e670-4b5c-9120-8b162d739de3_1.39861ccb364e931a9b4411d1e96484c5.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff",
+          "https://webtest.snrshopping.com/upload/product/Mogu%20Mogu%20Lychee%20with%20Nata%20De%20Coco%20Juice%20Drink%201L-511/Mogu%20Mogu%20Lychee%20with%20Nata%20De%20Coco%20Juice%20Drink%201L-0hV7FWN06f.jpg",
       },
       {
         id: 3,
-        name: "Honey Butter Potato Chips",
-        price: "91.50",
+        name: "Motts Juice Apple",
+        price: "262.50",
         itemPhoto:
-          "https://www.widebizz.com/shopping/uploads/product_image/product_1545_1.jpg",
+          "https://ph-test-11.slatic.net/p/b8d63ba60c67117f36cb6908899f7865.jpg",
       },
       {
         id: 4,
-        name: "Doritos Tortilla Chips Nacho Cheese",
-        price: "144.50",
+        name: "Florida Juice Orange 1L",
+        price: "200.00",
         itemPhoto:
-          "https://images-na.ssl-images-amazon.com/images/I/81iUuyr2R7L._SL1500_.jpg",
+          "https://www.thefeta.com/wp-content/uploads/2020/08/Floridas-Natural-100-Premium-Florida-Orange-Juice-No-Pulp-59-Fl-Oz-Feta.jpeg",
       },
       {
         id: 5,
-        name: "Nova Corn Chips",
+        name: "C2 Green Tea Plain",
         price: "27.50",
         itemPhoto:
-          "https://www.sarisaristore.se/238-large_default/nova-chips.jpg",
+          "https://www.grandhypermarkets.com/qatar/image/cache/catalog/products/1/4800016052101-800x800.jpg",
       },
     ],
   };
   try {
-    await db.collection("products").doc("chips").set(productObject);
+    await db.collection("products").doc("beverages").set(productObject);
     return res.json({ message: "Successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
