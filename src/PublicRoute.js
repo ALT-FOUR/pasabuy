@@ -6,7 +6,7 @@ const PublicRoute = ({ component: Component, restricted, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        localStorage.getItem("auth-token") && restricted ? (
+        localStorage.getItem("token") && restricted ? (
           <Redirect to="/" />
         ) : (
           <Component {...props} />

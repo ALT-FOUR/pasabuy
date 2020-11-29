@@ -1,9 +1,11 @@
-const Landing = () => {
+import { Link } from "react-router-dom";
+
+const Landing = () => (
   <div className="Landing">
     <Link to="/chips">Chips</Link>
     <Link to="/detergent">Detergent</Link>
     <Link to="/frozenFoods">Frozen Foods</Link>
-  </div>;
-};
+  </div>
+);
 
 export default Landing;

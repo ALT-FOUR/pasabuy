@@ -2,6 +2,7 @@ import { FIREBASE_API } from "../../api/FIREBASE_API";
 import React, { useEffect, useState } from "react";
 
 import CardItem from "../card item/CardItem";
+import "./items.styles.css";
 
 const Detergent = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,12 +27,14 @@ const Detergent = () => {
   }
 
   return (
-    <div className="items-container">
-      {detergentData !== undefined
-        ? detergentData.map(({ id, name, ...otherProps }) => (
-            <CardItem key={id} name={name} {...otherProps} />
-          ))
-        : null}
+    <div className="body">
+      <div className="items-container">
+        {detergentData !== undefined
+          ? detergentData.map(({ id, name, ...otherProps }) => (
+              <CardItem key={id} name={name} {...otherProps} />
+            ))
+          : null}
+      </div>
     </div>
   );
 };

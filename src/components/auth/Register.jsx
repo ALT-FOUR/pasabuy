@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FIREBASE_API } from "../../api/FIREBASE_API";
+import "../../assets/css/index.css";
 
 const Register = ({ setIsAuth }) => {
   const [errors, setErrors] = useState([]);
@@ -30,7 +31,7 @@ const Register = ({ setIsAuth }) => {
   };
 
   return (
-    <div>
+    <div className="modal-content">
       <div className="errors-container">
         {errors.map((e) => {
           return e.msg;
@@ -38,30 +39,35 @@ const Register = ({ setIsAuth }) => {
       </div>
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
+          type="email"
+          placeholder="Email"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
         />
         <input
-          type="text"
+          type="password"
+          placeholder="Password"
           onChange={(e) => {
             setPassword(e.target.value);
           }}
         />
         <input
-          type="text"
+          type="password"
+          placeholder="Confirm Password"
           onChange={(e) => {
             setConfirmPassword(e.target.value);
           }}
         />
         <input
           type="text"
+          placeholder="Username"
           onChange={(e) => {
             setHandle(e.target.value);
           }}
         />
-        <button type="submit">Register</button>
+
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );

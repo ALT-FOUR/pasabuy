@@ -9,7 +9,7 @@ const CardItem = ({ name, itemPhoto, price }) => (
     <div className="card-details">
       <h2 className="name">{name}</h2>
       <p className="prize">{price}</p>
-      <button>Add</button>
+      <button className="cart-icon">Add</button>
     </div>
   </div>
 );

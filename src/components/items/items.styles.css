@@ -1,0 +1,31 @@
+.body {
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 2%,
+    rgba(148, 187, 233, 1) 96%
+  );
+  font-family: "Nunito", sans-serif;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  position: absolute;
+  margin-top: 120px;
+  left: 70px;
+  top: 20px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+}
+
+.variety {
+  position: absolute;
+  top: 25px;
+  left: 90px;
+  font-size: 70px;
+}
